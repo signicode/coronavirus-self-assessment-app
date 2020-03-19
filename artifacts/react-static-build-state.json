@@ -1,0 +1,64 @@
+{
+  "prefetchRate": 5,
+  "maxThreads": null,
+  "disableRoutePrefixing": false,
+  "outputFileRate": 100,
+  "extensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+    ".tsx"
+  ],
+  "minLoadTime": 200,
+  "disablePreload": false,
+  "disableRuntime": false,
+  "preloadPollInterval": 300,
+  "productionSourceMaps": false,
+  "entry": "/workspace/coronavirus-self-assessment-app/app/src/index.tsx",
+  "plugins": [
+    "react-static-plugin-typescript",
+    [
+      "/workspace/coronavirus-self-assessment-app/app/node_modules/react-static-plugin-source-filesystem/node.api.js",
+      {
+        "location": "/workspace/coronavirus-self-assessment-app/app/src/pages"
+      }
+    ],
+    "/workspace/coronavirus-self-assessment-app/app/node_modules/react-static-plugin-reach-router/browser.api.js",
+    "/workspace/coronavirus-self-assessment-app/app/node_modules/react-static-plugin-sitemap/dist/node.api.js",
+    "/workspace/coronavirus-self-assessment-app/app"
+  ],
+  "paths": {
+    "ROOT": "/workspace/coronavirus-self-assessment-app/app",
+    "SRC": "/workspace/coronavirus-self-assessment-app/app/src",
+    "DIST": "/workspace/coronavirus-self-assessment-app/app/dist",
+    "ASSETS": "/workspace/coronavirus-self-assessment-app/app/dist",
+    "PLUGINS": "/workspace/coronavirus-self-assessment-app/app/plugins",
+    "TEMP": "/workspace/coronavirus-self-assessment-app/app/tmp",
+    "ARTIFACTS": "/workspace/coronavirus-self-assessment-app/app/artifacts",
+    "PUBLIC": "/workspace/coronavirus-self-assessment-app/app/public",
+    "NODE_MODULES": "/workspace/coronavirus-self-assessment-app/app/node_modules",
+    "EXCLUDE_MODULES": "/workspace/coronavirus-self-assessment-app/app/node_modules",
+    "PACKAGE": "/workspace/coronavirus-self-assessment-app/app/package.json",
+    "HTML_TEMPLATE": "/workspace/coronavirus-self-assessment-app/app/dist/index.html",
+    "STATIC_DATA": "/workspace/coronavirus-self-assessment-app/app/dist/staticData"
+  },
+  "siteRoot": "/",
+  "basePath": "",
+  "publicPath": "/",
+  "assetsPath": "",
+  "extractCssChunks": false,
+  "inlineCss": false,
+  "babelExcludes": [],
+  "devServer": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "terser": {
+    "terserOptions": {
+      "mangle": {},
+      "parse": {},
+      "compress": {},
+      "output": {}
+    }
+  }
+}
