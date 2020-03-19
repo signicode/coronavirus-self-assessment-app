@@ -3,7 +3,7 @@ import { useRouteData } from 'react-static'
 import { Link } from '@reach/router'
 import { Post } from '../../types'
 
-const Post = (): JSX.Element => {
+const PostContainer = (): JSX.Element => {
   const { post }: { post: Post } = useRouteData()
   return (
     <div>
@@ -15,4 +15,4 @@ const Post = (): JSX.Element => {
   )
 }
 
-export default Post;
+export default PostContainer;
