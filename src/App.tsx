@@ -8,7 +8,7 @@ import './app.css'
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
-function App() {
+function App(): JSX.Element {
   return (
     <Root>
       <nav>

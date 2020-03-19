@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default () => (
+const Index = (): JSX.Element => (
   <div style={{ textAlign: 'center' }}>
     <h1>
       Welcome to React-Static <br /> + TypeScript
@@ -16,3 +16,5 @@ export default () => (
     </p>
   </div>
 )
+
+export default Index;
