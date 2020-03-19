@@ -1,13 +1,17 @@
 {
   "name": "react-static-example-typescript",
   "private": true,
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
     "bundle": "react-static bundle",
     "export": "react-static export",
-    "serve": "serve dist -p 3000 -s"
+    "serve": "serve dist -p 3000 -s",
+    "lint": "eslint **/*.{js,ts}"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
@@ -28,6 +32,10 @@
     "@types/react-dom": "^16.8.5",
     "@types/react-hot-loader": "^4.1.0",
     "@types/webpack-env": "^1.14.0",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "eslint": "^6.8.0",
+    "eslint-config-scramjet": "^2.0.1",
     "react-hot-loader": "^4.12.11",
     "serve": "^11.1.0",
     "typescript": "^3.5.3"
