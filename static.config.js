@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import axios from 'axios'
 import path from 'path'
-// import { Post } from './types'
 
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
 
@@ -19,6 +19,7 @@ export default {
         children: posts.map((post /* : Post */) => ({
           path: `/post/${post.id}`,
           template: 'src/containers/Post',
+
           getData: () => ({
             post,
           }),

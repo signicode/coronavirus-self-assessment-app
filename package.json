@@ -11,7 +11,8 @@
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",
-    "lint": "eslint **/*.{js,ts}"
+    "lint": "eslint *.js src/**/*",
+    "test": "npm run lint"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
