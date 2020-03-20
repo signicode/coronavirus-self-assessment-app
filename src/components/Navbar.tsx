@@ -76,7 +76,6 @@ const Navbar: React.FC = () => {
 
     const langs = i18n.languages.sort();
     return (
-        <React.Suspense fallback={"Loading"}>
             <NavbarWrapper>
                 <Container>
                     <Nav isLightVersion={isLightVersion}>
@@ -90,6 +89,7 @@ const Navbar: React.FC = () => {
                         <div>
                             {langs.map((lang: string) => (
                                 <LangSwitcher
+                                    key={lang}
                                     active={i18n.language === lang}
                                     onClick={() => i18n.changeLanguage(lang)}
                                 >
@@ -100,7 +100,6 @@ const Navbar: React.FC = () => {
                     </Nav>
                 </Container>
             </NavbarWrapper>
-        </React.Suspense>
     );
 };
 export default Navbar;
