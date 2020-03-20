@@ -1,34 +1,33 @@
-import React from 'react'
-import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { Link, Router } from '@reach/router'
-import FancyDiv from 'components/FancyDiv'
-import Dynamic from 'containers/Dynamic'
-import './app.css'
+import React from "react";
+import { Root, Routes, addPrefetchExcludes } from "react-static";
+import { Router } from "@reach/router";
+import { ThemeProvider } from "styled-components";
+import Navbar from "components/Navbar";
+import { theme } from "./design/theme";
+import { GlobalStyle } from "./design/GlobalStyle";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(['dynamic'])
+addPrefetchExcludes(["dynamic"]);
+
+require("normalize.css");
 
 function App(): JSX.Element {
-  return (
-    <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
-      </nav>
-      <div className="content">
-        <FancyDiv>
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </FancyDiv>
-      </div>
-    </Root>
-  )
+    if(typeof window === 'undefined') // don't have an idea how to deal with Suspense and SSR
+        return null;
+
+    return (
+        <Root>
+            <ThemeProvider theme={theme}>
+                <GlobalStyle />
+                <React.Suspense fallback={<em>Loading...</em>}>
+                    <Navbar />
+                    <Router id={"router"}>
+                        <Routes path="*" />
+                    </Router>
+                </React.Suspense>
+            </ThemeProvider>
+        </Root>
+    );
 }
 
-export default App
+export default App;
