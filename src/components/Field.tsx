@@ -27,17 +27,19 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                 setValue([question.name, e.target.value])
             };
             return <div>
-            {question.answers.map((answer: Option, i: number) => (
+            {question.answers.map((answer: Option) => (
                 <div key={answer.name}>
                     <input
                         type="radio"
-                        name={`${question.name}[${i}]`}
-                        id={question.name + answer.name}
+                        name={`${question.name}`}
+                        id={question.name}
                         ref={register(question.name)}
+                        value={answer.name}
                         onChange={handleRadioChange}
+                        key={answer.name}
                         {...question.inputProps}
                     />{" "}
-                    <label htmlFor={question.name + answer.name}>
+                    <label htmlFor={question.name}>
                         {t(`questions:${answer.name}`)}
                     </label>
                 </div>
