@@ -5,16 +5,17 @@ export interface Post {
 }
 
 export type Option = {
-    name: keyof QuestionTranslation;
-    tip?: keyof QuestionTranslation;
+    name: QuestionTranslationKey;
+    tip?: QuestionTranslationKey;
     value: number;
 }
 
-type QuestionTranslation = typeof import("../public/locales/pl/questions.json")
+export type QuestionTranslations = typeof import("../public/locales/pl/questions.json");
+export type QuestionTranslationKey = keyof QuestionTranslations;
 
 export type Question = {
-    name: keyof QuestionTranslation;
-    description: keyof QuestionTranslation;
+    name: QuestionTranslationKey;
+    description: QuestionTranslationKey;
     generalInputType: "radio" | "input" | "checkbox" | "slider" | "boolean";
     answers?: Option[];
     inputProps?: any;
@@ -22,7 +23,7 @@ export type Question = {
 }; // TODO: change types to more specific
 
 export type Answer = {
-    question: keyof QuestionTranslation;
+    question: QuestionTranslationKey;
     choice: Option;
 }
 
@@ -31,6 +32,6 @@ export type Weight = {
     mode: 'add' | 'mul';
 };
 
-export type Weights = {
-    [key: string]: Weight;
-};
+export type Weights = Partial<{
+    [key in QuestionTranslationKey]: Weight;
+}>;
