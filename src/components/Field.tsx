@@ -23,6 +23,9 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
     }, [question])
     switch (question.generalInputType) {
         case "radio":
+            const handleRadioChange = (e: any): void => {
+                setValue([question.name, e.target.value])
+            };
             return <div>
             {question.answers.map((answer: Option, i: number) => (
                 <div key={answer.name}>
@@ -30,7 +33,8 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                         type="radio"
                         name={`${question.name}[${i}]`}
                         id={question.name + answer.name}
-                        ref={register(question.settings)}
+                        ref={register(question.name)}
+                        onChange={handleRadioChange}
                         {...question.inputProps}
                     />{" "}
                     <label htmlFor={question.name + answer.name}>
