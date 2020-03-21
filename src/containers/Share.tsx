@@ -18,6 +18,9 @@ const ShareContent = styled.div`
         align-items:center;
         justify-content: center;
     }
+    @media(max-width: 1000px){
+        grid-template-columns 1fr;
+    }
 `;
 const ShareButton = styled(Button)`
     background: none;
@@ -29,6 +32,12 @@ const ShareButton = styled(Button)`
     justify-content: center;
     img{
         height: 1.5em;
+    }
+    @media(max-width: 550px){
+        margin: 10px;
+    }
+    @media(max-width: 400px){
+        padding: 10px 1em;
     }
 `;
 const Share = (): JSX.Element => (

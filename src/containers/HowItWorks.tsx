@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useRef} from "react";
 import styled from "styled-components";
 import Section from "components/Section";
 import Container from "components/Container";
+import Slider from "react-slick";
+import {useWindowSize} from "../utils/useWindowSize";
+
+require("slick-carousel/slick/slick.css");
+require("slick-carousel/slick/slick-theme.css");
+
 
 const HowItWorksSection = styled(Section)`
     background: 
@@ -19,14 +25,21 @@ const HowItWorksSection = styled(Section)`
     p{
         font-size: 1.5em;
         width: 50%;
+        @media(max-width: 1000px){
+            width: 100%;
+        }
+    }
+    @media(max-width: 1000px){
+        background-size: 0;
     }
 `;
-const StepsGrid = styled.div`
+const StepsGrid = styled.div<any>`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 5vw;
+    grid-row-gap: 2em;
     margin-top: 10vh;
-    div{
+    .step{
         display: flex;
         h3{
             font-size: 3em;
@@ -36,6 +49,18 @@ const StepsGrid = styled.div`
             margin: 0;
             width: 100%;
         }
+        button{
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 2em 0 0 0;
+            font-size: 1.2em;
+            color: ${props => props.theme.colors.primary};
+            float: right;
+        }
+    }
+    @media(max-width: 1000px){
+        grid-template-columns: 1fr;
     }
 `;
 const Partners = styled.div`
@@ -50,10 +75,21 @@ const Partners = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
+
         img{
             height: 75px;
+            display: block;
+            @media(max-width: 1000px){
+                height: 50px;
+            }
+            @media(max-width: 550px){
+                height: 25px;
+            }
         }
+
+    }
+    @media(max-width: 1000px){
+      margin-top: 5vh;
     }
 `;
 const partners: string[] = [
@@ -62,39 +98,70 @@ const partners: string[] = [
     'hct4g',
     'aws'
 ];
-const HowItWorks = (): JSX.Element => (
-    <HowItWorksSection>
-        <Container>
-            <h2>Jak działa <br/>aplikacja?</h2>
-            <p>
-                Nasza aplikacja pomoże Ci szybko zdiagnozować Twoje objawy przeprowadzi Cię przez wszystkie kroki choroby.
-            </p>
-            <StepsGrid>
-                <div>
-                    <h3>1.</h3>
-                    <p>Odpowiedz na 6 pytań. Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.</p>
-                </div>
-                <div>
-                    <h3>2.</h3>
-                    <p>Odpowiedz na 6 pytań. Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.</p>
-                </div>
-                <div>
-                    <h3>3.</h3>
-                    <p>Odpowiedz na 6 pytań. Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.</p>
-                </div>
-            </StepsGrid>
-            <Partners>
-                <h3>Patronat:</h3>
-                <div>
-                    {
-                        partners.map((partner: string) => (
-                            <img key={partner} src={require(`../design/assets/partners/${partner}.png`)} alt=""/>
-                        ))
-                    }
-                </div>
-            </Partners>
-        </Container>
-    </HowItWorksSection>
-);
+const HowItWorks = (): JSX.Element => {
+    const { width } = useWindowSize();
+    const ref = useRef();
+    const showSlider = width <= 1000;
+    const handleNextSlide = () => {
+        if(showSlider && ref.current)
+            (ref.current as any).slickNext()
+    }
+    return (
+        <HowItWorksSection>
+            <Container>
+                <h2>Jak działa <br/>aplikacja?</h2>
+                <p>
+                    Nasza aplikacja pomoże Ci szybko zdiagnozować Twoje objawy przeprowadzi Cię przez wszystkie kroki choroby.
+                </p>
+                <StepsGrid as={showSlider ? Slider : 'div'} ref={ref}>
+                    <div>
+                        <div className={"step"}>
+                            <h3>1.</h3>
+                            <div>
+                                <p>Odpowiedz na 6 pytań. Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.</p>
+                                {
+                                    showSlider && <button onClick={handleNextSlide}>Next</button>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                    <div className={"step"}>
+                            <h3>2.</h3>
+                            <div>
+                                <p>Odpowiedz na 6 pytań. Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.</p>
+                                {
+                                    showSlider && <button onClick={handleNextSlide}>Next</button>
+                                }
+                            </div>
+                    </div>
+                    </div>
+                    <div>
+                    <div className={"step"}>
+                            <h3>3.</h3>
+                            <div>
+                                <p>Odpowiedz na 6 pytań. Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.Kilka słów co to za pytania jakiś opis.</p>
+                                {
+                                    showSlider && <button onClick={handleNextSlide}>Next</button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </StepsGrid>
+                <Partners>
+                    <h3>Patronat:</h3>
+                    <div>
+                        {
+                            partners.map((partner: string) => (
+                                <img key={partner} src={require(`../design/assets/partners/${partner}.png`)} alt=""/>
+                            ))
+                        }
+                    </div>
+                </Partners>
+            </Container>
+        </HowItWorksSection>
+    );
+}
 
 export default HowItWorks

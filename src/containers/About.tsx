@@ -15,6 +15,12 @@ const AboutContent = styled.div`
     
     .contact-us{
         text-align: right;
+        @media(max-width: 1000px){
+            margin-top: 2em;
+        }
+    }
+    @media(max-width: 1000px){
+        display: block;
     }
 `;
 const About = (): JSX.Element => (

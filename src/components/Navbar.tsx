@@ -1,16 +1,16 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Container from "./Container";
 import { useTranslation } from "react-i18next";
 import { Link } from "@reach/router";
 
-const NavbarWrapper = styled.div`
+const NavbarWrapper = styled.div<{isTransparent: boolean}>`
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 99;
-    // background: ${props=> props.theme.colors.primary};
+    background: ${props => props.isTransparent ? 'transparent' : props.theme.colors.primary};
 `;
 
 const Nav = styled.nav`
@@ -70,11 +70,22 @@ const LangSwitcher = styled.button<LangSwitcherProps>`
 // eslint-disable-next-line react/prop-types
 const Navbar: React.FC = () => {
     const { i18n } = useTranslation();
-
+    const [isTransparent, setTransparent] = useState(typeof window !== 'undefined' && window.scrollY === 0);
+    useEffect(() => {
+        if (typeof window !== 'undefined'){
+            const handleScroll = (): void => {
+                setTransparent(window.scrollY === 0)
+            };
+            document.addEventListener('scroll', handleScroll);
+            return (): void => {
+                document.removeEventListener('scroll', handleScroll);
+            }
+        }
+    }, []);
     const langs = i18n.languages.sort();
     return (
-            <NavbarWrapper>
-                <Container  wide="true">
+            <NavbarWrapper isTransparent={isTransparent}>
+                <Container>
                     <Nav>
                         <Brand to={"/"}>
                             <span></span>

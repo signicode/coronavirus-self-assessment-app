@@ -1,8 +1,8 @@
 import styled from "styled-components";
-type ContainerProps = any; // TODO: make it more specific
+// type ContainerProps = any; // TODO: make it more specific
 
-const Container = styled.div<ContainerProps>`
-    width: ${props => (props.wide ? "calc(100% - 2em)" : "100%")};
+const Container = styled.div<{}>`
+    width: calc(100% - 4em);
     height: 100%;
     margin: auto;
     @media(min-width: 1000px){
