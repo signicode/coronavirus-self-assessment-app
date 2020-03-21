@@ -17,9 +17,10 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
         if(question.generalInputType === 'slider'){
             register({
                 name: question.name
-            })
+            });
+            setValue(question.name, question.answers[0].name)
         }
-    }, [])
+    }, [question])
     switch (question.generalInputType) {
         case "radio":
             return <div>
@@ -75,7 +76,8 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                     }
                 }
             })
-            const answerIndex = Object.keys(marks).indexOf(sliderValue.toString())
+            // const keys =
+            const answerIndex = Object.keys(marks).sort((a, b) => parseFloat(a)-parseFloat(b)).indexOf(sliderValue.toString())
             const handleSliderChange = (val: any): void => {
                 const value = ~~val;
                 setSliderValue(value)

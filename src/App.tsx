@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import Navbar from "components/Navbar";
 import { theme } from "./design/theme";
 import { GlobalStyle } from "./design/GlobalStyle";
+import Loader from "components/Loader";
 // import { Weights, Question, Option } from "../types/";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
@@ -37,7 +38,7 @@ class App extends React.Component {
             <Root>
                 <ThemeProvider theme={theme}>
                     <GlobalStyle />
-                    <React.Suspense fallback={<em>Loading...</em>}>
+                    <React.Suspense fallback={<Loader/>}>
                         <Navbar />
                         <Router id={"router"}>
                             <Routes path="*" />

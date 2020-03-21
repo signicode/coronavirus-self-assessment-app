@@ -15,7 +15,7 @@ export const questions: Question[] = [
     {
         name: "HEART_DISEASES_QUESTION",
         description: "HEART_DISEASES_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "HEART_DISEASES_QUESTION_NO_ANSWER", tip: "HEART_DISEASES_QUESTION_NO_TIP",  value: 0},
             {name: "HEART_DISEASES_QUESTION_YES_ANSWER", tip: "HEART_DISEASES_QUESTION_YES_TIP",  value: 1}

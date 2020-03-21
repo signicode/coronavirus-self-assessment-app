@@ -9,13 +9,15 @@ const NavbarWrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 99;
+    // background: ${props=> props.theme.colors.primary};
 `;
 
 const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 0;
+    padding: 5vh 0;
     color: white;
 `;
 
