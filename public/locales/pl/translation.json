@@ -2,5 +2,7 @@
   "app_description": "Nasza apka itp",
   "call_to_action": "Przetestuj się",
   "result": "wynik",
-  "next_question": "następne pytanie"
+  "next_question": "następne pytanie",
+  "recommend_us": "Poleć nas znajomym",
+  "what_can_you_do": "Sprawdź co możesz zrobić"
 }

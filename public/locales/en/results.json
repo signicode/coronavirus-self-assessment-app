@@ -1,0 +1,17 @@
+{
+    "healthy" : {
+      "title": "JEst ok",
+      "text": "Siedź na tyłku",
+      "what_can_you_do": "NIC"
+    },
+    "problematic" : {
+        "title": "Nie JEst ok",
+        "text": "Siedź na tyłku",
+        "what_can_you_do": "NIC"
+      },
+    "ill" : {
+        "title": "JEst źle",
+        "text": "Siedź na tyłku",
+        "what_can_you_do": "Jeszcze mniej"
+    }
+  }

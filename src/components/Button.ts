@@ -14,6 +14,7 @@ const Button = styled.button<ButtonProps>`
     text-decoration: none;
     text-align: center;
     border-radius: 2em;
+    box-sizing:border-box;
 `;
 
 export default Button;
