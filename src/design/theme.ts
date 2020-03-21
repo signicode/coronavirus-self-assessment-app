@@ -5,7 +5,8 @@ const theme: DefaultTheme = {
 
     colors: {
         primary: "#1D32FA",
-        secondary: "white"
+        secondary: "white",
+        light: "#EEEFF3"
     }
 };
 

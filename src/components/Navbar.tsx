@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Container from "./Container";
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "@reach/router";
+import { Link } from "@reach/router";
 
 const NavbarWrapper = styled.div`
     position: fixed;
@@ -11,15 +11,12 @@ const NavbarWrapper = styled.div`
     width: 100%;
 `;
 
-type NavProps = {
-    isLightVersion: boolean;
-};
-const Nav = styled.nav<NavProps>`
+const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em 0;
-    color: ${props => (props.isLightVersion ? "white" : "inherit")};
+    color: white;
 `;
 
 const Brand = styled(Link)`
@@ -71,19 +68,17 @@ const LangSwitcher = styled.button<LangSwitcherProps>`
 // eslint-disable-next-line react/prop-types
 const Navbar: React.FC = () => {
     const { i18n } = useTranslation();
-    const { pathname } = useLocation();
-    const isLightVersion = ["/"].includes(pathname);
 
     const langs = i18n.languages.sort();
     return (
             <NavbarWrapper>
                 <Container>
-                    <Nav isLightVersion={isLightVersion}>
+                    <Nav>
                         <Brand to={"/"}>
                             <span></span>
                             <h4>
-                                Covid <br />
-                                Checker
+                                How You <br />
+                                Feel World
                             </h4>
                         </Brand>
                         <div>

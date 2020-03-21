@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { questions } from "../lib/questions";
 import Question from "components/Question";
-import Container from "components/Container";
 import { navigate } from "@reach/router";
 import ViewWrapper from "components/ViewWrapper";
 
@@ -26,18 +25,14 @@ const AppView = (): JSX.Element => {
     };
     const question = questions[currentQuestionIndex];
     return (
-        <Container>
             <ViewWrapper>
                 <Question
                     question={question}
                     index={currentQuestionIndex}
-                    isLastQuestion={
-                        currentQuestionIndex === questions.length - 1
-                    }
+                    totalQuestions={questions.length}
                     onNext={handleNextQuestion}
                 />
             </ViewWrapper>
-        </Container>
     );
 };
 

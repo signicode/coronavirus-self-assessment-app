@@ -5,6 +5,7 @@ type ButtonProps = any; // TODO: make it more specific
 const Button = styled.button<ButtonProps>`
     border: none;
     display: ${props => (props.block ? "block" : "inline-block")};
+    width: 100%;
     background: ${props =>
         props.light ? "white" : props.theme.colors.primary};
     padding: 10px;

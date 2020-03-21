@@ -1,11 +1,20 @@
 {
+  "COUGH_QUESTION": "Kaszel",
+  "COUGH_DESCRIPTION": "Opis",
+  "COUGH_QUESTION_OPT_ONE_ANSWER": "Opcja 1",
+  "COUGH_QUESTION_OPT_TWO_ANSWER": "Opcja 2",
+  "COUGH_QUESTION_OPT_THREE_ANSWER": "Opcja 3",
+  "COUGH_ERROR": "Wybierz",
+  "COUGH_TIP": "Opis 2",
   "WHATS_YOUR_AGE_QUESTION": "Ile masz lat?",
   "WHATS_YOUR_AGE_DESCRIPTION": "Musimy wiedzieć, ile masz lat",
   "WHATS_YOUR_AGE_ERROR": "Wpisz swój wiek",
+  "WHATS_YOUR_AGE_TIP": "Opis 2",
   "SOME_OPTIONS_QUESTION": "Jakieś opcje",
   "SOME_OPTIONS_DESCRIPTION": "Opis 2 pytania",
   "SOME_OPTIONS_QUESTION_OPT_ONE_ANSWER": "Opcja 1",
   "SOME_OPTIONS_QUESTION_OPT_TWO_ANSWER": "Opcja 2",
   "SOME_OPTIONS_QUESTION_OPT_THREE_ANSWER": "Opcja 3",
-  "SOME_OPTIONS_ERROR": "Wybierz przynajmniej jedną opcję"
+  "SOME_OPTIONS_ERROR": "Wybierz przynajmniej jedną opcję",
+  "SOME_OPTIONS_TIP": "Opis 2"
 }

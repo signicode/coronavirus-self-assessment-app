@@ -1,11 +1,20 @@
 {
+  "COUGH_QUESTION": "Cough",
+  "COUGH_DESCRIPTION": "2nd question desc",
+  "COUGH_QUESTION_OPT_ONE_ANSWER": "Option 1",
+  "COUGH_QUESTION_OPT_TWO_ANSWER": "Option 2",
+  "COUGH_QUESTION_OPT_THREE_ANSWER": "Option 3",
+  "COUGH_ERROR": "Choose",
+  "COUGH_TIP": "Tip",
   "WHATS_YOUR_AGE_QUESTION": "What's your age?",
   "WHATS_YOUR_AGE_DESCRIPTION": "We need to know your age",
   "WHATS_YOUR_AGE_ERROR": "Please enter your age",
+  "WHATS_YOUR_AGE_TIP": "Tip",
   "SOME_OPTIONS_QUESTION": "Some options",
   "SOME_OPTIONS_DESCRIPTION": "2nd question desc",
   "SOME_OPTIONS_QUESTION_OPT_ONE_ANSWER": "Option 1",
   "SOME_OPTIONS_QUESTION_OPT_TWO_ANSWER": "Option 2",
   "SOME_OPTIONS_QUESTION_OPT_THREE_ANSWER": "Option 3",
-  "SOME_OPTIONS_ERROR": "Choose at least one option"
+  "SOME_OPTIONS_ERROR": "Choose at least one option",
+  "SOME_OPTIONS_TIP": "Tip"
 }
