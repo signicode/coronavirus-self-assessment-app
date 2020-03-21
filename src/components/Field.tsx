@@ -68,7 +68,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
             const marks: any = {};
             const step = 100/(question.answers.length-1);
             question.answers.forEach((answer: any, i: number) => {
-                marks[i/(question.answers.length-1)*100] = {
+                marks[~~(i/(question.answers.length-1)*100)] = {
                     label: t(`questions:${answer.name}`),
                     style: {
                         width: '5em'
@@ -77,9 +77,9 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
             })
             const answerIndex = Object.keys(marks).indexOf(sliderValue.toString())
             const handleSliderChange = (val: any): void => {
-                console.log(val)
-                setSliderValue(val)
-                setValue(question.name, question.answers[answerIndex])
+                const value = ~~val;
+                setSliderValue(value)
+                setValue(question.name, question.answers[Object.keys(marks).indexOf(value.toString())])
             };
             const color = getColor(answerIndex)
             return (
