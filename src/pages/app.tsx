@@ -7,8 +7,9 @@ import ViewWrapper from "components/ViewWrapper";
 const AppView = (): JSX.Element => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [response, setResponse] = useState({});
+    
     const handleNextQuestion = (arg: any) => {
-        console.log(arg);
+        console.log('arg', arg);
         const res = {
             ...response,
             ...arg.value

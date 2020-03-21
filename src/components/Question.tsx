@@ -44,7 +44,7 @@ const Question: React.FC<QuestionProps> = ({
     onNext
 }: QuestionProps): JSX.Element => {
     const { t } = useTranslation(["translation", "questions"]);
-    const { handleSubmit, register, errors, setValue } = useForm();
+    const { handleSubmit, register, errors, setValue} = useForm();
     const isLastQuestion = index === totalQuestions - 1;
     const onSubmit = (value: FormValue): void => {
         onNext({
@@ -54,13 +54,17 @@ const Question: React.FC<QuestionProps> = ({
             value
         });
     };
+    const setValueTemp = (value: FormValue): void => {
+        setValue(question.name, value[1])
+    };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Progress max={totalQuestions} value={index+1} />
             <QuestionNo>Pytanie {index+1}/{totalQuestions}</QuestionNo>
             <h2>{t(`questions:${question.name}`)}</h2>
             <p>{t(`questions:${question.description}`)}</p>
-            <Field question={question} register={register} setValue={setValue} />
+            <Field question={question} register={register} setValue={setValueTemp} />
             {!isObjEmpty(errors) && (
                 <Error>
                     {capitalize(t(`questions:${question.name}_ERROR`))}

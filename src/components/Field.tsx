@@ -77,11 +77,12 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                 }
             })
             // const keys =
+            register({ name: question.name });
             const answerIndex = Object.keys(marks).sort((a, b) => parseFloat(a)-parseFloat(b)).indexOf(sliderValue.toString())
             const handleSliderChange = (val: any): void => {
                 const value = ~~val;
                 setSliderValue(value)
-                setValue(question.name, question.answers[Object.keys(marks).indexOf(value.toString())])
+                setValue([question.name, question.answers[Object.keys(marks).indexOf(value.toString())]])
             };
             const color = getColor(answerIndex)
             return (
