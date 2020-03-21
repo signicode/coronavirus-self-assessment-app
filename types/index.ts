@@ -35,3 +35,7 @@ export type Weight = {
 export type Weights = Partial<{
     [key in QuestionTranslationKey]: Weight;
 }>;
+
+export type FormResult = Partial<{
+    [key in QuestionTranslationKey]: Option;
+}>;
