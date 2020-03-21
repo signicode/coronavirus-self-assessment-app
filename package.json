@@ -12,6 +12,7 @@
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",
+    "check": "test -e \"dist/index.html\"",
     "lint": "eslint *.js src/**/*",
     "test": "npm run lint"
   },

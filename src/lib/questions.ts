@@ -2,129 +2,146 @@ import { Question } from "../../types/";
 
 export const questions: Question[] = [
     {
-        name: "AGE",
+        name: "AGE_QUESTION",
+        description: "AGE_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "0_50", value: 0},
-            {name: "50_65", value: 1},
-            {name: "65_80", value: 2},
-            {name: "80_UP", value: 3},
+            {name: "AGE_QUESTION_0_50_ANSWER", tip: "AGE_QUESTION_0_50_TIP",  value: 0},
+            {name: "AGE_QUESTION_50_65_ANSWER", tip: "AGE_QUESTION_50_65_TIP",  value: 1},
+            {name: "AGE_QUESTION_65_80_ANSWER", tip: "AGE_QUESTION_65_80_TIP",  value: 2},
+            {name: "AGE_QUESTION_80_UP_ANSWER", tip: "AGE_QUESTION_80_UP_TIP",  value: 3},
         ]
     },
     {
-        name: "HEART_DISEASES",
+        name: "HEART_DISEASES_QUESTION",
+        description: "HEART_DISEASES_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "HEART_DISEASES_QUESTION_YES_ANSWER", tip: "HEART_DISEASES_QUESTION_YES_TIP",  value: 0},
+            {name: "HEART_DISEASES_QUESTION_NO_ANSWER", tip: "HEART_DISEASES_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "HIGH_BLOOD_PRESSURE",
+        name: "HIGH_BLOOD_PRESSURE_QUESTION",
+        description: "HIGH_BLOOD_PRESSURE_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "HIGH_BLOOD_PRESSURE_QUESTION_YES_ANSWER", tip: "HIGH_BLOOD_PRESSURE_QUESTION_YES_TIP",  value: 0},
+            {name: "HIGH_BLOOD_PRESSURE_QUESTION_NO_ANSWER", tip: "HIGH_BLOOD_PRESSURE_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "DIABETES",
+        name: "DIABETES_QUESTION",
+        description: "DIABETES_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "DIABETES_QUESTION_YES_ANSWER", tip: "DIABETES_QUESTION_YES_TIP",  value: 0},
+            {name: "DIABETES_QUESTION_NO_ANSWER", tip: "DIABETES_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "LUNG_DISEASES",
+        name: "LUNG_DISEASES_QUESTION",
+        description: "LUNG_DISEASES_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "LUNG_DISEASES_QUESTION_YES_ANSWER", tip: "LUNG_DISEASES_QUESTION_YES_TIP",  value: 0},
+            {name: "LUNG_DISEASES_QUESTION_NO_ANSWER", tip: "LUNG_DISEASES_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "ASTHMA",
+        name: "ASTHMA_QUESTION",
+        description: "ASTHMA_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "ASTHMA_QUESTION_YES_ANSWER", tip: "ASTHMA_QUESTION_YES_TIP",  value: 0},
+            {name: "ASTHMA_QUESTION_NO_ANSWER", tip: "ASTHMA_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "FEVER",
+        name: "FEVER_QUESTION",
+        description: "FEVER_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "LESS_THAN_37", value: 0},
-            {name: "LESS_THAN_38", value: 1},
-            {name: "LESS_THAN_39", value: 2},
-            {name: "OVER_39", value: 3},
+            {name: "FEVER_QUESTION_LESS_THAN_37_ANSWER", tip: "FEVER_QUESTION_LESS_THAN_37_TIP",  value: 0},
+            {name: "FEVER_QUESTION_LESS_THAN_38_ANSWER", tip: "FEVER_QUESTION_LESS_THAN_38_TIP",  value: 1},
+            {name: "FEVER_QUESTION_LESS_THAN_39_ANSWER", tip: "FEVER_QUESTION_LESS_THAN_39_TIP",  value: 2},
+            {name: "FEVER_QUESTION_OVER_39_ANSWER", tip: "FEVER_QUESTION_OVER_39_TIP",  value: 3},
         ]
     },
     {
-        name: "COUGH",
+        name: "COUGH_QUESTION",
+        description: "COUGH_QUESTION_DESCRIPTION",
         generalInputType: "slider", // render in Field component depends on it
         answers: [
-            {name: "NO_COUGH", value: 0},
-            {name: "COUGH_WET", value: 1},
-            {name: "COUGH_DRY", value: 2},
-            {name: "COUGH_BOTH", value: 3},
+            {name: "COUGH_QUESTION_NO_COUGH_ANSWER", tip: "COUGH_QUESTION_NO_COUGH_TIP",  value: 0},
+            {name: "COUGH_QUESTION_COUGH_WET_ANSWER", tip: "COUGH_QUESTION_COUGH_WET_TIP",  value: 1},
+            {name: "COUGH_QUESTION_COUGH_DRY_ANSWER", tip: "COUGH_QUESTION_COUGH_DRY_TIP",  value: 2},
+            {name: "COUGH_QUESTION_COUGH_BOTH_ANSWER", tip: "COUGH_QUESTION_COUGH_BOTH_TIP",  value: 3},
         ]
     },
     {
-        name: "SHORTNESS_OF_BREATH",
+        name: "SHORTNESS_OF_BREATH_QUESTION",
+        description: "SHORTNESS_OF_BREATH_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "SHORTNESS_OF_BREATH_QUESTION_YES_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_YES_TIP",  value: 0},
+            {name: "SHORTNESS_OF_BREATH_QUESTION_NO_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "CHILLS",
+        name: "CHILLS_QUESTION",
+        description: "CHILLS_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "CHILLS_QUESTION_YES_ANSWER", tip: "CHILLS_QUESTION_YES_TIP",  value: 0},
+            {name: "CHILLS_QUESTION_NO_ANSWER", tip: "CHILLS_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "SORE_THROAT",
+        name: "SORE_THROAT_QUESTION",
+        description: "SORE_THROAT_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "SORE_THROAT_QUESTION_YES_ANSWER", tip: "SORE_THROAT_QUESTION_YES_TIP",  value: 0},
+            {name: "SORE_THROAT_QUESTION_NO_ANSWER", tip: "SORE_THROAT_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "RUNNING_NOSE",
+        name: "RUNNING_NOSE_QUESTION",
+        description: "RUNNING_NOSE_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "RUNNING_NOSE_QUESTION_YES_ANSWER", tip: "RUNNING_NOSE_QUESTION_YES_TIP",  value: 0},
+            {name: "RUNNING_NOSE_QUESTION_NO_ANSWER", tip: "RUNNING_NOSE_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "VOMMITING",
+        name: "VOMMITING_QUESTION",
+        description: "VOMMITING_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "VOMMITING_QUESTION_YES_ANSWER", tip: "VOMMITING_QUESTION_YES_TIP",  value: 0},
+            {name: "VOMMITING_QUESTION_NO_ANSWER", tip: "VOMMITING_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "DIARRHOEA",
+        name: "DIARRHOEA_QUESTION",
+        description: "DIARRHOEA_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "DIARRHOEA_QUESTION_YES_ANSWER", tip: "DIARRHOEA_QUESTION_YES_TIP",  value: 0},
+            {name: "DIARRHOEA_QUESTION_NO_ANSWER", tip: "DIARRHOEA_QUESTION_NO_TIP",  value: 1}
         ]
     },
     {
-        name: "DIFICULITY_BREATHING",
+        name: "DIFICULITY_BREATHING_QUESTION",
+        description: "DIFICULITY_BREATHING_QUESTION_DESCRIPTION",
         generalInputType: "slider",
         answers: [
-            {name: "YES", value: 0},
-            {name: "NO", value: 1}
+            {name: "DIFICULITY_BREATHING_QUESTION_NONE_ANSWER", tip: "DIFICULITY_BREATHING_QUESTION_NONE_TIP",  value: 0},
+            {name: "DIFICULITY_BREATHING_QUESTION_SELDOM_ANSWER", tip: "DIFICULITY_BREATHING_QUESTION_SELDOM_TIP",  value: 1},
+            {name: "DIFICULITY_BREATHING_QUESTION_OFTEN_ANSWER", tip: "DIFICULITY_BREATHING_QUESTION_OFTEN_TIP", value: 2},
+            {name: "DIFICULITY_BREATHING_QUESTION_ALWAYS_ANSWER", tip: "DIFICULITY_BREATHING_QUESTION_ALWAYS_TIP", value: 3}
         ]
     },
 ];

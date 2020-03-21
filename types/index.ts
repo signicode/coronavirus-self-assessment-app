@@ -5,12 +5,16 @@ export interface Post {
 }
 
 export type Option = {
-    name: string;
+    name: keyof QuestionTranslation;
+    tip?: keyof QuestionTranslation;
     value: number;
 }
 
+type QuestionTranslation = typeof import("../public/locales/pl/questions.json")
+
 export type Question = {
-    name: string;
+    name: keyof QuestionTranslation;
+    description: keyof QuestionTranslation;
     generalInputType: "radio" | "input" | "checkbox" | "slider" | "boolean";
     answers?: Option[];
     inputProps?: any;
@@ -18,7 +22,7 @@ export type Question = {
 }; // TODO: change types to more specific
 
 export type Answer = {
-    question: string;
+    question: keyof QuestionTranslation;
     choice: Option;
 }
 

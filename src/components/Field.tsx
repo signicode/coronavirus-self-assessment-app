@@ -33,7 +33,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                         {...question.inputProps}
                     />{" "}
                     <label htmlFor={question.name + answer.name}>
-                        {t(`${question.name}_QUESTION_${answer}_ANSWER`)}
+                        {t(`questions:${answer.name}`)}
                     </label>
                 </div>
             ))}
@@ -50,7 +50,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                             {...question.inputProps}
                         />{" "}
                         <label htmlFor={question.name + answer}>
-                            {t(`${question.name}_QUESTION_${answer}_ANSWER`)}
+                            {t(`questions:${answer.name}`)}
                         </label>
                     </div>
                 ))}
@@ -69,7 +69,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
             const step = 100/(question.answers.length-1);
             question.answers.forEach((answer: any, i: number) => {
                 marks[i/(question.answers.length-1)*100] = {
-                    label: t(`questions:${question.name}_QUESTION_${answer.name}_ANSWER`),
+                    label: t(`questions:${answer.name}`),
                     style: {
                         width: '5em'
                     }

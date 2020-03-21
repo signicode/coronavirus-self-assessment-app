@@ -58,8 +58,8 @@ const Question: React.FC<QuestionProps> = ({
         <form onSubmit={handleSubmit(onSubmit)}>
             <Progress max={totalQuestions} value={index+1} />
             <QuestionNo>Pytanie {index+1}/{totalQuestions}</QuestionNo>
-            <h2>{t(`questions:${question.name}_QUESTION`)}</h2>
-            <p>{t(`questions:${question.name}_DESCRIPTION`)}</p>
+            <h2>{t(`questions:${question.name}`)}</h2>
+            <p>{t(`questions:${question.description}`)}</p>
             <Field question={question} register={register} setValue={setValue} />
             {!isObjEmpty(errors) && (
                 <Error>
