@@ -16,6 +16,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^2.6.1",
     "@reach/router": "^1.2.1",
     "axios": "^0.19.0",
     "i18next": "^19.3.3",

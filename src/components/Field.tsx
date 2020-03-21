@@ -32,14 +32,14 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                     <input
                         type="radio"
                         name={`${question.name}`}
-                        id={question.name}
+                        id={question.name + answer.name}
                         ref={register(question.name)}
                         value={answer.name}
                         onChange={handleRadioChange}
                         key={answer.name}
                         {...question.inputProps}
                     />{" "}
-                    <label htmlFor={question.name}>
+                    <label htmlFor={question.name + answer.name}>
                         {t(`questions:${answer.name}`)}
                     </label>
                 </div>
@@ -85,6 +85,8 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
             // const keys =
             register({ name: question.name });
             const answerIndex = Object.keys(marks).sort((a, b) => parseFloat(a)-parseFloat(b)).indexOf(sliderValue.toString())
+            setValue([question.name, question.answers[Object.keys(marks).indexOf(answerIndex.toString())]])
+
             const handleSliderChange = (val: any): void => {
                 const value = ~~val;
                 setSliderValue(value)
