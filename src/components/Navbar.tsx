@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
     const langs = i18n.languages.sort();
     return (
             <NavbarWrapper>
-                <Container>
+                <Container  wide="true">
                     <Nav>
                         <Brand to={"/"}>
                             <span></span>
