@@ -39,3 +39,12 @@ export type Weights = Partial<{
 export type FormResult = Partial<{
     [key in QuestionTranslationKey]: Option;
 }>;
+
+export type AssessmentTranslations = typeof import("../public/locales/pl/assessment.json");
+export type AssessmentTranslationKey = keyof AssessmentTranslations;
+
+export type Assessment = {
+    title: AssessmentTranslationKey;
+    value: number;
+    recommendation: AssessmentTranslationKey[];
+}

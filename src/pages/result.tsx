@@ -49,9 +49,9 @@ const Result = (): JSX.Element => {
                             {t("translation:what_can_you_do")}
                         </Button>
                     </Actions>
-                    {recommendations.map((answer,i) => {     
-                        // Return the element. Also pass key     
-                        return <div key={i}>{t(`results:recommendations.${answer}`)}</div> 
+                    {recommendations.map((answer,i) => {
+                        // Return the element. Also pass key
+                        return <div key={i}>{t(`results:recommendations.${answer}`)}</div>
                         })}
                     <Actions>
                         <Button as={Link} to={"/app"}  light="true" block="true">
