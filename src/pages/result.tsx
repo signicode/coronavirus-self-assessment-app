@@ -16,8 +16,9 @@ const Result = (): JSX.Element => {
     const location = useLocation();
     const { t } = useTranslation(["translation", "results"]);
     const recommendations = [0,1];
+    const resultName="healthy";
     // Checking if translation exists
-    if (!(location.state as any).response || t(`results:values.${'healthy'}.title`).indexOf('title')!=-1)
+    if (!(location.state as any).response || t(`results:values.${resultName}.title`).indexOf('title')!=-1)
         return (
             <ViewWrapper>
                 <Container>
@@ -35,16 +36,16 @@ const Result = (): JSX.Element => {
                     }}
                 >
                     <h2>
-                        {t(`results:values.${'healthy'}.title`)}
+                        {t(`results:values.${resultName}.title`)}
                     </h2>
                     <code>
                         {JSON.stringify((location.state as any).response)}
                     </code>
                     <div>
-                        {t(`results:values.${'healthy'}.text`)}
+                        {t(`results:values.${resultName}.text`)}
                     </div>
                     <Actions>
-                        <Button as={Link} to={"/app"}  block>
+                        <Button as={Link} to={"/app"}  block="true">
                             {t("translation:what_can_you_do")}
                         </Button>
                     </Actions>
@@ -53,7 +54,7 @@ const Result = (): JSX.Element => {
                         return <div key={i}>{t(`results:recommendations.${answer}`)}</div> 
                         })}
                     <Actions>
-                        <Button as={Link} to={"/app"}  light block>
+                        <Button as={Link} to={"/app"}  light="true" block="true">
                             {t("translation:recommend_us")}
                         </Button>
                     </Actions>
