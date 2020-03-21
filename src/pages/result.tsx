@@ -17,7 +17,6 @@ const Actions = styled.div`
 const Result = (): JSX.Element => {
     const location = useLocation();
     const { t } = useTranslation(["translation", "results", "assessment"]);
-    const resultName="healthy";
 
     const formResults = (location.state as any).response;
     const results: FormResult = formResults;
@@ -56,7 +55,7 @@ const Result = (): JSX.Element => {
                         {~~(value * 100)}%: {t(`assessment:${title}`)}
                     </h2>
                     <div>
-                        {t(`results:values.${resultName}.text`)}
+                        {t(`assessment:${title}_DESCRIPTION`)}
                     </div>
                     <Actions>
                         <Button as={Link} to={"/app"}  block="true">
