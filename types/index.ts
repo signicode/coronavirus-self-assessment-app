@@ -17,7 +17,7 @@ export type Question = {
     name: QuestionTranslationKey;
     description: QuestionTranslationKey;
     generalInputType: "radio" | "input" | "checkbox" | "slider" | "boolean";
-    answers?: Option[];
+    answers: Option[];
     inputProps?: any;
     settings?: any;
 }; // TODO: change types to more specific
@@ -46,5 +46,5 @@ export type AssessmentTranslationKey = keyof AssessmentTranslations;
 export type Assessment = {
     title: AssessmentTranslationKey;
     value: number;
-    recommendation: AssessmentTranslationKey[];
+    recommendations: AssessmentTranslationKey[];
 }
