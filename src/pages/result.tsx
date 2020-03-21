@@ -25,6 +25,17 @@ const Result = (): JSX.Element => {
     const assessment = assessResult(results);
     const {title, recommendations, value} = createRecommendation(assessment);
 
+    const debug = {
+        value,
+        title,
+        recommendations,
+        answers: Object.entries(results).map(
+            data => `${data[0]}: ${data[1] && data[1].name}(${data[1] && data[1].value})`
+        )
+    };
+
+    console.log(debug);
+
     // Checking if translation exists
     if (!results || !t(`assessment:${title}`))
         return (
@@ -40,12 +51,7 @@ const Result = (): JSX.Element => {
     return (
         <Container>
             <ViewWrapper>
-                <pre
-                    style={{
-                        overflow: "auto",
-                        maxWidth: "100%"
-                    }}
-                >
+                <pre style={{ overflow: "auto", maxWidth: "100%" }}>
                     <h2>
                         {~~(value * 100)}%: {t(`assessment:${title}`)}
                     </h2>
@@ -68,9 +74,7 @@ const Result = (): JSX.Element => {
                             {t("translation:recommend_us")}
                         </Button>
                     </Actions>
-                    <code>
-                        {JSON.stringify((location.state as any).response, null, 2)}
-                    </code>
+                    {JSON.stringify(debug, null, 2)}
                 </pre>
             </ViewWrapper>
         </Container>
