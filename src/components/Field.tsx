@@ -24,7 +24,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
     switch (question.generalInputType) {
         case "radio":
             const handleRadioChange = (e: any): void => {
-                setValue([question.name, e.target.value])
+                setValue([question.name, question.answers.find(({name}) => name === e.target.value)])
             };
             return <div>
             {question.answers.map((answer: Option) => (

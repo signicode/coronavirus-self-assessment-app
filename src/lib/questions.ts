@@ -24,7 +24,7 @@ export const questions: Question[] = [
     {
         name: "HIGH_BLOOD_PRESSURE_QUESTION",
         description: "HIGH_BLOOD_PRESSURE_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "HIGH_BLOOD_PRESSURE_QUESTION_NO_ANSWER", tip: "HIGH_BLOOD_PRESSURE_QUESTION_NO_TIP",  value: 0},
             {name: "HIGH_BLOOD_PRESSURE_QUESTION_YES_ANSWER", tip: "HIGH_BLOOD_PRESSURE_QUESTION_YES_TIP",  value: 1}
@@ -33,7 +33,7 @@ export const questions: Question[] = [
     {
         name: "DIABETES_QUESTION",
         description: "DIABETES_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "DIABETES_QUESTION_NO_ANSWER", tip: "DIABETES_QUESTION_NO_TIP",  value: 0},
             {name: "DIABETES_QUESTION_YES_ANSWER", tip: "DIABETES_QUESTION_YES_TIP",  value: 1}
@@ -42,7 +42,7 @@ export const questions: Question[] = [
     {
         name: "LUNG_DISEASES_QUESTION",
         description: "LUNG_DISEASES_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "LUNG_DISEASES_QUESTION_NO_ANSWER", tip: "LUNG_DISEASES_QUESTION_NO_TIP",  value: 0},
             {name: "LUNG_DISEASES_QUESTION_YES_ANSWER", tip: "LUNG_DISEASES_QUESTION_YES_TIP",  value: 1}
@@ -51,7 +51,7 @@ export const questions: Question[] = [
     {
         name: "ASTHMA_QUESTION",
         description: "ASTHMA_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "ASTHMA_QUESTION_NO_ANSWER", tip: "ASTHMA_QUESTION_NO_TIP",  value: 0},
             {name: "ASTHMA_QUESTION_YES_ANSWER", tip: "ASTHMA_QUESTION_YES_TIP",  value: 1}

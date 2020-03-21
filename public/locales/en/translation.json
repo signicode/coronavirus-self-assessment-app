@@ -5,4 +5,6 @@
   "next_question": "next question",
   "recommend_us": "Recommend our test to your friends",
   "what_can_you_do": "What can you do",
+  "slider_tip": "Zaznacz właściwy przedział klikając na oś.",
+  "radio_tip": "Choose one of the available options."
 }

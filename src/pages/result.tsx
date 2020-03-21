@@ -5,6 +5,8 @@ import Container from "components/Container";
 import Button from "components/Button";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import { FormResult } from "../../types";
+import { assessResult, createRecommendation } from "../lib/calculator";
 
 const Actions = styled.div`
     margin-top: 2em;
@@ -15,10 +17,16 @@ const Actions = styled.div`
 const Result = (): JSX.Element => {
     const location = useLocation();
     const { t } = useTranslation(["translation", "results"]);
-    const recommendations = [0,1];
     const resultName="healthy";
+
+    const formResults = (location.state as any).response;
+    const results: FormResult = formResults;
+
+    const assessment = assessResult(results);
+    const {title, recommendations, value} = createRecommendation(assessment);
+
     // Checking if translation exists
-    if (!(location.state as any).response || t(`results:values.${resultName}.title`).indexOf('title')!=-1)
+    if (!results || t(`assessment:${title}`))
         return (
             <ViewWrapper>
                 <Container>
@@ -36,11 +44,8 @@ const Result = (): JSX.Element => {
                     }}
                 >
                     <h2>
-                        {t(`results:values.${resultName}.title`)}
+                        {value * 100}%: {t(`results:values.${resultName}.title`)}
                     </h2>
-                    <code>
-                        {JSON.stringify((location.state as any).response)}
-                    </code>
                     <div>
                         {t(`results:values.${resultName}.text`)}
                     </div>
@@ -58,6 +63,9 @@ const Result = (): JSX.Element => {
                             {t("translation:recommend_us")}
                         </Button>
                     </Actions>
+                    <code>
+                        {JSON.stringify((location.state as any).response, null, 2)}
+                    </code>
                 </pre>
             </ViewWrapper>
         </Container>

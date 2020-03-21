@@ -4,5 +4,7 @@
   "result": "wynik",
   "next_question": "następne pytanie",
   "recommend_us": "Poleć nas znajomym",
-  "what_can_you_do": "Sprawdź co możesz zrobić"
+  "what_can_you_do": "Sprawdź co możesz zrobić",
+  "slider_tip": "Zaznacz właściwy przedział klikając na oś.",
+  "radio_tip": "Aby zaznaczyć właściwą odpowiedź, wybierz jedną z dostępnych odpowiedzi."
 }

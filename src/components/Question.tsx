@@ -67,12 +67,12 @@ const Question: React.FC<QuestionProps> = ({
             <Field question={question} register={register} setValue={setValueTemp} />
             {!isObjEmpty(errors) && (
                 <Error>
-                    {capitalize(t(`questions:${question.name}_ERROR`))}
+                    {capitalize(t(`${question.generalInputType}_error`))}
                 </Error>
             )}
             <Tip>
                 <p>
-                    {t(`questions:${question.name}_TIP`)}
+                    {t(`${question.generalInputType}_tip`)}
                 </p>
             </Tip>
             <Actions>
