@@ -15,8 +15,9 @@ const Actions = styled.div`
 const Result = (): JSX.Element => {
     const location = useLocation();
     const { t } = useTranslation(["translation", "results"]);
+    const recommendations = [0,1];
     // Checking if translation exists
-    if (!(location.state as any).response || t(`results:${'healthy'}.title`).indexOf('title')!=-1)
+    if (!(location.state as any).response || t(`results:values.${'healthy'}.title`).indexOf('title')!=-1)
         return (
             <ViewWrapper>
                 <Container>
@@ -34,19 +35,23 @@ const Result = (): JSX.Element => {
                     }}
                 >
                     <h2>
-                        {t(`results:${'healthy'}.title`)}
+                        {t(`results:values.${'healthy'}.title`)}
                     </h2>
                     <code>
                         {JSON.stringify((location.state as any).response)}
                     </code>
                     <div>
-                        {t(`results:${'healthy'}.text`)}
+                        {t(`results:values.${'healthy'}.text`)}
                     </div>
                     <Actions>
                         <Button as={Link} to={"/app"}  block>
                             {t("translation:what_can_you_do")}
                         </Button>
                     </Actions>
+                    {recommendations.map((answer,i) => {     
+                        // Return the element. Also pass key     
+                        return <div key={i}>{t(`results:recommendations.${answer}`)}</div> 
+                        })}
                     <Actions>
                         <Button as={Link} to={"/app"}  light block>
                             {t("translation:recommend_us")}
