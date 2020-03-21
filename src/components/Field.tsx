@@ -69,7 +69,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
             const step = 100/(question.answers.length-1);
             question.answers.forEach((answer: any, i: number) => {
                 marks[i/(question.answers.length-1)*100] = {
-                    label: t(`questions:${question.name}_QUESTION_${answer}_ANSWER`),
+                    label: t(`questions:${question.name}_QUESTION_${answer.name}_ANSWER`),
                     style: {
                         width: '5em'
                     }
