@@ -16,7 +16,7 @@ const Actions = styled.div`
 `;
 const Result = (): JSX.Element => {
     const location = useLocation();
-    const { t } = useTranslation(["translation", "results"]);
+    const { t } = useTranslation(["translation", "results", "assessment"]);
     const resultName="healthy";
 
     const formResults = (location.state as any).response;
@@ -26,11 +26,14 @@ const Result = (): JSX.Element => {
     const {title, recommendations, value} = createRecommendation(assessment);
 
     // Checking if translation exists
-    if (!results || t(`assessment:${title}`))
+    if (!results || !t(`assessment:${title}`))
         return (
             <ViewWrapper>
                 <Container>
                     <h1>Error</h1>
+                    <code>
+                        {JSON.stringify({title, recommendations, value}, null, 2)}
+                    </code>
                 </Container>
             </ViewWrapper>
         );
@@ -44,20 +47,22 @@ const Result = (): JSX.Element => {
                     }}
                 >
                     <h2>
-                        {value * 100}%: {t(`results:values.${resultName}.title`)}
+                        {~~(value * 100)}%: {t(`assessment:${title}`)}
                     </h2>
                     <div>
                         {t(`results:values.${resultName}.text`)}
                     </div>
                     <Actions>
                         <Button as={Link} to={"/app"}  block="true">
-                            {t("translation:what_can_you_do")}
+                            {t("assessment:what_can_you_do")}
                         </Button>
                     </Actions>
-                    {recommendations.map((answer,i) => {
-                        // Return the element. Also pass key
-                        return <div key={i}>{t(`results:recommendations.${answer}`)}</div>
+                    <ul>
+                        {recommendations.map((answer,i) => {
+                            // Return the element. Also pass key
+                            return <li key={i}>{t(`assessment:${answer}`)}</li>
                         })}
+                    </ul>
                     <Actions>
                         <Button as={Link} to={"/app"}  light="true" block="true">
                             {t("translation:recommend_us")}

@@ -15,7 +15,7 @@ export function calculateScore(answers: FormResult, weights: {[key: string]: Wei
     }, 1);
 
     return Object.entries(answers).reduce((acc, [question, choice]) => {
-        if (!(question in weights)) return acc;
+        if (!(question in weights) || !choice) return acc;
 
         const weight = weights[question];
         switch(weight.mode) {
