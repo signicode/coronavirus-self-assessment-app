@@ -8,6 +8,7 @@
     "start": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
+    "check": "test -e \"dist/index.html\"",
     "bundle": "react-static bundle",
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",

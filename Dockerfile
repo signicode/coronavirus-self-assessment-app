@@ -10,6 +10,7 @@ COPY . ./
 
 RUN npm run lint || true
 RUN npm run build
+RUN npm run check
 
 # 2 copy to nginx
 FROM nginx:1.17.9-alpine
