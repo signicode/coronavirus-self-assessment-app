@@ -5,6 +5,7 @@ import { AppContainer } from "react-hot-loader";
 // Your top level component
 import App from "./App";
 import "./i18n/setup";
+import * as serviceWorker from './serviceWorker';
 // Export your top level component as JSX (for static rendering)
 export default App;
 
@@ -12,6 +13,7 @@ export default App;
 if (typeof document !== "undefined") {
     const target = document.getElementById("root");
 
+    serviceWorker.register()
 
     const renderMethod = target.hasChildNodes()
         ? ReactDOM.hydrate
