@@ -34,7 +34,7 @@ type QuestionProps = {
 type FormValue = {
     [key: string]: string;
 };
-const isObjEmpty = (obj: any): boolean => Object.keys(obj).length === 0;
+const isObjEmpty = (obj: object): boolean => Object.keys(obj).length === 0;
 
 // eslint-disable-next-line react/prop-types
 const Question: React.FC<QuestionProps> = ({
