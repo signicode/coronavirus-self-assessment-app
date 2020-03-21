@@ -11,10 +11,10 @@ export type Option = {
 
 export type Question = {
     name: string;
-    generalInputType: "input" | "checkbox" | "slider" | "boolean";
+    generalInputType: "radio" | "input" | "checkbox" | "slider" | "boolean";
     answers?: Option[];
-    inputProps: any;
-    settings: any;
+    inputProps?: any;
+    settings?: any;
 }; // TODO: change types to more specific
 
 export type Answer = {

@@ -6,7 +6,7 @@ import Button from "components/Button";
 import Progress from "components/Progress";
 import { useTranslation } from "react-i18next";
 import { capitalize } from "../utils/text";
-import {Question as QuestionType } from "../lib/questions";
+import { Question as QuestionType } from "../../types";
 const QuestionNo = styled.span`
     display: block;
     font-size: .9em;
@@ -42,7 +42,7 @@ const Question: React.FC<QuestionProps> = ({
     totalQuestions,
     index,
     onNext
-}): JSX.Element => {
+}: QuestionProps): JSX.Element => {
     const { t } = useTranslation(["translation", "questions"]);
     const { handleSubmit, register, errors, setValue } = useForm();
     const isLastQuestion = index === totalQuestions - 1;

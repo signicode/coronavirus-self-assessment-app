@@ -3,13 +3,14 @@ import { useTranslation } from "react-i18next";
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {getColor} from "../utils/colors";
+import { Question, Option } from "../../types/";
 // eslint-disable-next-line react/prop-types
 type FieldProps = {
-    question: any;
+    question: Question;
     register: Function;
-    setValue: Function
+    setValue: Function;
 };
-const Field: React.FC<FieldProps> = ({ question, register, setValue }) => {
+const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProps) => {
     const { t } = useTranslation("questions");
     const [sliderValue, setSliderValue] = useState(0);
     useEffect(() => {
@@ -21,35 +22,39 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }) => {
     }, [])
     switch (question.generalInputType) {
         case "radio":
-            return question.answers.map((answer: any, i: number) => (
-                <div key={answer}>
+            return <div>
+            {question.answers.map((answer: Option, i: number) => (
+                <div key={answer.name}>
                     <input
                         type="radio"
                         name={`${question.name}[${i}]`}
-                        id={question.name + answer}
+                        id={question.name + answer.name}
                         ref={register(question.settings)}
                         {...question.inputProps}
                     />{" "}
-                    <label htmlFor={question.name + answer}>
+                    <label htmlFor={question.name + answer.name}>
                         {t(`${question.name}_QUESTION_${answer}_ANSWER`)}
                     </label>
                 </div>
-            ));
+            ))}
+            </div>
         case "checkbox":
-            return question.answers.map((answer: any, i: number) => (
-                <div key={answer}>
-                    <input
-                        type="checkbox"
-                        name={`${question.name}[${i}]`}
-                        id={question.name + answer}
-                        ref={register(question.settings)}
-                        {...question.inputProps}
-                    />{" "}
-                    <label htmlFor={question.name + answer}>
-                        {t(`${question.name}_QUESTION_${answer}_ANSWER`)}
-                    </label>
-                </div>
-            ));
+            return <div>
+                {question.answers.map((answer: Option, i: number) => (
+                    <div key={answer.name}>
+                        <input
+                            type="checkbox"
+                            name={`${question.name}[${i}]`}
+                            id={question.name + answer}
+                            ref={register(question.settings)}
+                            {...question.inputProps}
+                        />{" "}
+                        <label htmlFor={question.name + answer}>
+                            {t(`${question.name}_QUESTION_${answer}_ANSWER`)}
+                        </label>
+                    </div>
+                ))}
+            </div>
         case "input":
             return (
                 <input
@@ -62,7 +67,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }) => {
         case "slider":
             const marks: any = {};
             const step = 100/(question.answers.length-1);
-            question.answers.forEach((answer: string, i: number) => {
+            question.answers.forEach((answer: any, i: number) => {
                 marks[i/(question.answers.length-1)*100] = {
                     label: t(`questions:${question.name}_QUESTION_${answer}_ANSWER`),
                     style: {
