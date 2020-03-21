@@ -1,24 +1,24 @@
 {
-    "values":{
-        "healthy" : {
-        "title": "JEst ok",
-        "text": "Siedź na tyłku",
-        "what_can_you_do": "NIC"
-        },
-        "problematic" : {
-            "title": "Nie JEst ok",
-            "text": "Siedź na tyłku",
-            "what_can_you_do": "NIC"
-        },
-        "ill" : {
-            "title": "JEst źle",
-            "text": "Siedź na tyłku",
-            "what_can_you_do": "Jeszcze mniej"
-        }
+  "values": {
+    "healthy": {
+      "title": "It's ok",
+      "text": "We recommend that you stay indoors.",
+      "what_can_you_do": "Nothing"
     },
-    "recommendations": [
-        "ABC",
-        "CDE",
-        "EFG"
-    ]
-  }
+    "problematic": {
+      "title": "Observe",
+      "text": "Periodically check your condition",
+      "what_can_you_do": "Nothing"
+    },
+    "ill": {
+      "title": "Call in",
+      "text": "Please call the emergency services and provide the following information ...",
+      "what_can_you_do": "Nothing"
+    }
+  },
+  "recommendations": [
+    "ABC",
+    "CDE",
+    "EFG"
+  ]
+}
