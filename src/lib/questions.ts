@@ -82,7 +82,7 @@ export const questions: Question[] = [
     {
         name: "SHORTNESS_OF_BREATH_QUESTION",
         description: "SHORTNESS_OF_BREATH_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "SHORTNESS_OF_BREATH_QUESTION_NO_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_NO_TIP",  value: 0},
             {name: "SHORTNESS_OF_BREATH_QUESTION_YES_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_YES_TIP",  value: 20},
@@ -91,7 +91,7 @@ export const questions: Question[] = [
     {
         name: "CHILLS_QUESTION",
         description: "CHILLS_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "CHILLS_QUESTION_NO_ANSWER", tip: "CHILLS_QUESTION_NO_TIP",  value: 0},
             {name: "CHILLS_QUESTION_YES_ANSWER", tip: "CHILLS_QUESTION_YES_TIP",  value: 5},
@@ -100,7 +100,7 @@ export const questions: Question[] = [
     {
         name: "SORE_THROAT_QUESTION",
         description: "SORE_THROAT_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "SORE_THROAT_QUESTION_NO_ANSWER", tip: "SORE_THROAT_QUESTION_NO_TIP",  value: 0},
             {name: "SORE_THROAT_QUESTION_YES_ANSWER", tip: "SORE_THROAT_QUESTION_YES_TIP",  value: 2},
@@ -109,7 +109,7 @@ export const questions: Question[] = [
     {
         name: "RUNNING_NOSE_QUESTION",
         description: "RUNNING_NOSE_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "RUNNING_NOSE_QUESTION_NO_ANSWER", tip: "RUNNING_NOSE_QUESTION_NO_TIP",  value: 0},
             {name: "RUNNING_NOSE_QUESTION_YES_ANSWER", tip: "RUNNING_NOSE_QUESTION_YES_TIP",  value: 2},
@@ -118,7 +118,7 @@ export const questions: Question[] = [
     {
         name: "VOMMITING_QUESTION",
         description: "VOMMITING_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "VOMMITING_QUESTION_NO_ANSWER", tip: "VOMMITING_QUESTION_NO_TIP",  value: 0},
             {name: "VOMMITING_QUESTION_YES_ANSWER", tip: "VOMMITING_QUESTION_YES_TIP",  value: 2},
@@ -127,7 +127,7 @@ export const questions: Question[] = [
     {
         name: "DIARRHOEA_QUESTION",
         description: "DIARRHOEA_QUESTION_DESCRIPTION",
-        generalInputType: "slider",
+        generalInputType: "radio",
         answers: [
             {name: "DIARRHOEA_QUESTION_NO_ANSWER", tip: "DIARRHOEA_QUESTION_NO_TIP",  value: 0},
             {name: "DIARRHOEA_QUESTION_YES_ANSWER", tip: "DIARRHOEA_QUESTION_YES_TIP",  value: 2},
