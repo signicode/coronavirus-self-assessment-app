@@ -46,6 +46,8 @@ export function createRecommendation(assessments: AssessmentGroup): Assessment {
     if (illnessScore > .7) title = "TITLE_INFECTED";
     else if (illnessScore > .4) title = "TITLE_AMBIGUOUS";
 
+
+
     const recommendations: AssessmentTranslationKey[] = [];
 
     if (illnessScore < .2) {

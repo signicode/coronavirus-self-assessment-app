@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import PropTypes from "prop-types";
 
 type SEOProps = {
-    title: string
+    title: string;
 }
 const SEO = (props: SEOProps) => (
     <Helmet>
