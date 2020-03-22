@@ -55,7 +55,8 @@ const Question: React.FC<QuestionProps> = ({
         });
     };
     const setValueTemp = (value: FormValue): void => {
-        setValue(question.name, value[1])
+        console.log(question.name, value);
+        setValue(value[0], value[1])
     };
 
     return (
@@ -64,7 +65,7 @@ const Question: React.FC<QuestionProps> = ({
             <QuestionNo>Pytanie {index+1}/{totalQuestions}</QuestionNo>
             <h2>{t(`questions:${question.name}`)}</h2>
             <p>{t(`questions:${question.description}`)}</p>
-            <Field question={question} register={register} setValue={setValueTemp} />
+            <Field key={question.name} question={question} register={register} setValue={setValueTemp} />
             {!isObjEmpty(errors) && (
                 <Error>
                     {capitalize(t(`${question.generalInputType}_error`))}

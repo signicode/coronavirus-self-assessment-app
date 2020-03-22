@@ -69,6 +69,15 @@ export const questions: Question[] = [
         ]
     },
     {
+        name: "SHORTNESS_OF_BREATH_QUESTION",
+        description: "SHORTNESS_OF_BREATH_QUESTION_DESCRIPTION",
+        generalInputType: "radio",
+        answers: [
+            {name: "SHORTNESS_OF_BREATH_QUESTION_NO_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_NO_TIP",  value: 0},
+            {name: "SHORTNESS_OF_BREATH_QUESTION_YES_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_YES_TIP",  value: 20},
+        ]
+    },
+    {
         name: "COUGH_QUESTION",
         description: "COUGH_QUESTION_DESCRIPTION",
         generalInputType: "slider", // render in Field component depends on it
@@ -77,15 +86,6 @@ export const questions: Question[] = [
             {name: "COUGH_QUESTION_COUGH_WET_ANSWER", tip: "COUGH_QUESTION_COUGH_WET_TIP",  value: 10},
             {name: "COUGH_QUESTION_COUGH_BOTH_ANSWER", tip: "COUGH_QUESTION_COUGH_BOTH_TIP",  value: 20},
             {name: "COUGH_QUESTION_COUGH_DRY_ANSWER", tip: "COUGH_QUESTION_COUGH_DRY_TIP",  value: 30},
-        ]
-    },
-    {
-        name: "SHORTNESS_OF_BREATH_QUESTION",
-        description: "SHORTNESS_OF_BREATH_QUESTION_DESCRIPTION",
-        generalInputType: "radio",
-        answers: [
-            {name: "SHORTNESS_OF_BREATH_QUESTION_NO_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_NO_TIP",  value: 0},
-            {name: "SHORTNESS_OF_BREATH_QUESTION_YES_ANSWER", tip: "SHORTNESS_OF_BREATH_QUESTION_YES_TIP",  value: 20},
         ]
     },
     {

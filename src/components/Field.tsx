@@ -17,12 +17,12 @@ margin: 0.5rem 0 .5rem 9px;
 input[type="radio"] {
   opacity: 0;
   margin-top: -5px;
-  
+
   & + label {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    
+
     &::before {
       content: '';
       display: inline-block;
@@ -33,7 +33,7 @@ input[type="radio"] {
       width: 18px;
       height: 18px;
     }
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -45,7 +45,7 @@ input[type="radio"] {
       height: 12px;
     }
   }
-  
+
   &:checked {
     + label::after {
       background: ${props => props.theme.colors.primary};
@@ -57,6 +57,7 @@ input[type="radio"] {
 const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProps) => {
     const { t } = useTranslation("questions");
     const [sliderValue, setSliderValue] = useState(0);
+
     useEffect(() => {
         if(question.generalInputType === 'slider'){
             register({
@@ -128,11 +129,11 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                         width: '5em'
                     }
                 }
-            })
-            // const keys =
+            });
+
             register({ name: question.name });
             const answerIndex = Object.keys(marks).sort((a, b) => parseFloat(a)-parseFloat(b)).indexOf(sliderValue.toString())
-            setValue([question.name, question.answers[Object.keys(marks).indexOf(answerIndex.toString())]])
+            // setValue([question.name, question.answers[Object.keys(marks).indexOf(answerIndex.toString())]])
 
             const handleSliderChange = (val: any): void => {
                 const value = ~~val;
