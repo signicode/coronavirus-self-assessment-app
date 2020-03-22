@@ -13,6 +13,7 @@ const Progress = styled.progress`
     &::-webkit-progress-value {
         border-radius: 5px;
         background: ${props => props.theme.colors.primary};
+        transition: .2s all;
     }
     &::-moz-progress-bar {
         border-radius: 5px;

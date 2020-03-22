@@ -113,7 +113,7 @@ const HowItWorks = (): JSX.Element => {
                 <p>
                     Nasza aplikacja pomoże Ci szybko zdiagnozować Twoje objawy przeprowadzi Cię przez wszystkie kroki choroby.
                 </p>
-                <StepsGrid as={showSlider ? Slider : 'div'} ref={ref}>
+                <StepsGrid as={showSlider ? Slider : 'div'} ref={ref} arrows={false}>
                     <div>
                         <div className={"step"}>
                             <h3>1.</h3>

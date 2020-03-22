@@ -4,12 +4,56 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {getColor} from "../utils/colors";
 import { Question, Option } from "../../types/";
+import styled from "styled-components";
 // eslint-disable-next-line react/prop-types
 type FieldProps = {
     question: Question;
     register: Function;
     setValue: Function;
 };
+
+const RadioWrapper = styled.div`
+margin: 0.5rem 0 .5rem 9px;
+input[type="radio"] {
+  opacity: 0;
+  margin-top: -5px;
+  
+  & + label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: -24px;
+      border-radius: 50%;
+      border: 1px solid ${props => props.theme.colors.primary};
+      width: 18px;
+      height: 18px;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      left: -20px;
+      top: 4px;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  
+  &:checked {
+    + label::after {
+      background: ${props => props.theme.colors.primary};
+    }
+  }
+}
+`;
+
 const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProps) => {
     const { t } = useTranslation("questions");
     const [sliderValue, setSliderValue] = useState(0);
@@ -28,7 +72,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
             };
             return <div>
             {question.answers.map((answer: Option) => (
-                <div key={answer.name}>
+                <RadioWrapper key={answer.name}>
                     <input
                         type="radio"
                         name={`${question.name}`}
@@ -42,7 +86,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                     <label htmlFor={question.name + answer.name}>
                         {t(`questions:${answer.name}`)}
                     </label>
-                </div>
+                </RadioWrapper>
             ))}
             </div>
         case "checkbox":

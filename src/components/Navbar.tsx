@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Container from "./Container";
 import { useTranslation } from "react-i18next";
-import { Link } from "@reach/router";
+import Brand from "components/Brand";
 
 const NavbarWrapper = styled.div<{isTransparent: boolean}>`
     position: fixed;
@@ -19,38 +19,6 @@ const Nav = styled.nav`
     align-items: center;
     padding: 5vh 0;
     color: white;
-`;
-
-const Brand = styled(Link)`
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    span {
-        display: block;
-        height: 1em;
-        width: 1em;
-        border-radius: 50%;
-        background: red;
-        margin-right: 0.5em;
-        position: relative;
-
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 0.5em;
-            width: 0.5em;
-            border-radius: 50%;
-            background: ${props => props.theme.colors.primary};
-        }
-    }
-    h4 {
-        margin: 0;
-    }
 `;
 
 type LangSwitcherProps = {
@@ -87,13 +55,7 @@ const Navbar: React.FC = () => {
             <NavbarWrapper isTransparent={isTransparent}>
                 <Container>
                     <Nav>
-                        <Brand to={"/"}>
-                            <span></span>
-                            <h4>
-                                How You <br />
-                                Feel World
-                            </h4>
-                        </Brand>
+                        <Brand />
                         <div>
                             {langs.map((lang: string) => (
                                 <LangSwitcher
