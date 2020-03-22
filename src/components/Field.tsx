@@ -77,7 +77,9 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                         type="radio"
                         name={`${question.name}`}
                         id={question.name + answer.name}
-                        ref={register(question.name)}
+                        ref={register(question.name, {
+                            required: true
+                        })}
                         value={answer.name}
                         onChange={handleRadioChange}
                         key={answer.name}
@@ -97,6 +99,7 @@ const Field: React.FC<FieldProps> = ({ question, register, setValue }: FieldProp
                             type="checkbox"
                             name={`${question.name}[${i}]`}
                             id={question.name + answer}
+                            checked={i === 0}
                             ref={register(question.settings)}
                             {...question.inputProps}
                         />{" "}

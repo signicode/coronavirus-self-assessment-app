@@ -107,7 +107,7 @@ const HowItWorks = (): JSX.Element => {
             (ref.current as any).slickNext()
     }
     return (
-        <HowItWorksSection>
+        <HowItWorksSection className={"how-it-works-section"}>
             <Container>
                 <h2>Jak działa <br/>aplikacja?</h2>
                 <p>

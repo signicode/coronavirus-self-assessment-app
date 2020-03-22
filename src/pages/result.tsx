@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, Link } from "@reach/router";
+import { useLocation } from "@reach/router";
 import ViewWrapper from "components/ViewWrapper";
 import Container from "components/Container";
 import Button from "components/Button";
@@ -7,6 +7,11 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { FormResult } from "../../types";
 import { assessResult, createRecommendation } from "../lib/calculator";
+import Share from "containers/Share";
+import DataInfo from "containers/DataInfo";
+import Recommendations from "containers/Recommendations";
+import About from "containers/About";
+import SEO from "components/SEO";
 
 const Actions = styled.div`
     margin-top: 2em;
@@ -49,9 +54,9 @@ const Result = (): JSX.Element => {
             </ViewWrapper>
         );
     return (
-        <Container>
+        <>
+            <SEO title={"Result"}/>
             <ViewWrapper>
-                <pre style={{ overflow: "auto", maxWidth: "100%" }}>
                     <h2>
                         {~~(illnessScore * 100)}%: {t(`assessment:${title}`)}
                     </h2>
@@ -59,25 +64,34 @@ const Result = (): JSX.Element => {
                         {t(`assessment:${title}_DESCRIPTION`)}
                     </div>
                     <Actions>
-                        <Button as={Link} to={"/app"}  block="true">
+                        <Button
+                            onClick={() => {
+                                if(typeof window !== 'undefined'){
+                                    document.querySelector('.recommendations-section').scrollIntoView({behavior: "smooth"})
+                                }
+                            }}
+                            block="true">
                             {t("assessment:what_can_you_do")}
                         </Button>
                     </Actions>
-                    <ul>
-                        {recommendations.map((answer,i) => {
-                            // Return the element. Also pass key
-                            return <li key={i}>{t(`assessment:${answer}`)}</li>
-                        })}
-                    </ul>
                     <Actions>
-                        <Button as={Link} to={"/app"}  light="true" block="true">
+                        <Button
+                            onClick={() => {
+                                if(typeof window !== 'undefined'){
+                                    document.querySelector('.share-section').scrollIntoView({behavior: "smooth"})
+                                }
+                            }}
+                            light="true"
+                            block="true">
                             {t("translation:recommend_us")}
                         </Button>
                     </Actions>
-                    {JSON.stringify(debug, null, 2)}
-                </pre>
             </ViewWrapper>
-        </Container>
+        <Share />
+        <DataInfo/>
+        <Recommendations recommendations={recommendations}/>
+        <About light={true}/>
+                </>
     );
 };
 

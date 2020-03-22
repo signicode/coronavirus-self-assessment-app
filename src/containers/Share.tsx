@@ -41,7 +41,7 @@ const ShareButton = styled(Button)`
     }
 `;
 const Share = (): JSX.Element => (
-    <ShareSection>
+    <ShareSection className={"share-section"}>
         <Container>
             <ShareContent>
                 <div>

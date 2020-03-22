@@ -5,6 +5,7 @@ import { navigate } from "@reach/router";
 import ViewWrapper from "components/ViewWrapper";
 import Button from "components/Button";
 import Brand from "components/Brand";
+import SEO from "components/SEO";
 
 const AppView = (): JSX.Element => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1);
@@ -30,6 +31,8 @@ const AppView = (): JSX.Element => {
     };
     const question = questions[currentQuestionIndex];
     return (
+        <>
+            <SEO title={"Form"}/>
             <ViewWrapper>
                 {
                     currentQuestionIndex === -1 ? (
@@ -54,6 +57,7 @@ const AppView = (): JSX.Element => {
                     )
                 }
             </ViewWrapper>
+            </>
     );
 };
 

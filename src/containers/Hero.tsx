@@ -47,7 +47,7 @@ const HeroContent = styled.div`
     }
 `;
 const LearnMore = styled.button`
-    margin-top: 2em;
+    margin: 2em 0;
     padding: 0;
     background: none;
     border: none;
@@ -72,7 +72,11 @@ const Hero = (): JSX.Element => {
                     {t("call_to_action")}
                 </Button>
                 <div>
-                    <LearnMore>Przeczytaj więcej o naszej aplikacji</LearnMore>
+                    <LearnMore onClick={() => {
+                        if(typeof window !== 'undefined'){
+                            document.querySelector('.how-it-works-section').scrollIntoView({behavior: "smooth"})
+                        }
+                    }}>Przeczytaj więcej o naszej aplikacji</LearnMore>
                 </div>
             </HeroContent>
         </Container>
