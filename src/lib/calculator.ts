@@ -39,30 +39,31 @@ export function assessResult(input: FormResult): AssessmentGroup {
 }
 
 export function createRecommendation(assessments: AssessmentGroup): Assessment {
-    const value = assessments.CoronavirusPossibility;
-    const risk = assessments.RiskGroup;
+    const illnessScore = assessments.CoronavirusPossibility;
+    const riskScore = assessments.RiskGroup;
     let title: AssessmentTranslationKey = "TITLE_HEALTHY";
 
-    if (value > .7) title = "TITLE_INFECTED";
-    else if (value > .4) title = "TITLE_AMBIGUOUS";
+    if (illnessScore > .7) title = "TITLE_INFECTED";
+    else if (illnessScore > .4) title = "TITLE_AMBIGUOUS";
 
     const recommendations: AssessmentTranslationKey[] = [];
 
-    if (value < .2) {
+    if (illnessScore < .2) {
         recommendations.push("RECOMMENDATION_WASH_HANDS", "RECOMMENDATION_AVOID_CROWDS", "RECOMMENDATION_LIMIT_TRAVEL", "RECOMMENDATION_KEEP_SOCIAL_DISTANCE");
-        if (risk > 1) recommendations.push("RECOMMENDATION_ASK_FRIENDS_OR_FAMILY_TO_DO_SHOPPING", "RECOMMENDATION_MONITOR_YOURSELF", "RECOMMENDATION_WEAR_GLOVES_AND_MASK_WHEN_CONTACTING_OTHERS");
-    } else if (value < .6) {
-        if (risk > 1) recommendations.push("RECOMMENDATION_CALL_INFORMATION");
+        if (riskScore > 1) recommendations.push("RECOMMENDATION_ASK_FRIENDS_OR_FAMILY_TO_DO_SHOPPING", "RECOMMENDATION_MONITOR_YOURSELF", "RECOMMENDATION_WEAR_GLOVES_AND_MASK_WHEN_CONTACTING_OTHERS");
+    } else if (illnessScore < .6) {
+        if (riskScore > 1) recommendations.push("RECOMMENDATION_CALL_INFORMATION");
         recommendations.push("RECOMMENDATION_WASH_HANDS","RECOMMENDATION_COUGH_SNEEZE_TISSUE","RECOMMENDATION_KEEP_SOCIAL_DISTANCE","RECOMMENDATION_MONITOR_YOURSELF","RECOMMENDATION_ORGANIZE_PET_SITTER","RECOMMENDATION_ASK_FRIENDS_OR_FAMILY_TO_DO_SHOPPING", "RECOMMENDATION_STRICT_QUARANTINE", "RECOMMENDATION_CALL_INFORMATION_WHEN_SYMPTOMS_OCCUR");
     } else {
-        if (risk <= 1) recommendations.push("RECOMMENDATION_CALL_INFORMATION");
+        if (riskScore <= 1) recommendations.push("RECOMMENDATION_CALL_INFORMATION");
         else recommendations.push("RECOMMENDATION_CALL_EMERGENCY_NUMBER");
         recommendations.push("RECOMMENDATION_WASH_HANDS","RECOMMENDATION_COUGH_SNEEZE_TISSUE","RECOMMENDATION_KEEP_SOCIAL_DISTANCE","RECOMMENDATION_MONITOR_YOURSELF","RECOMMENDATION_ORGANIZE_PET_SITTER","RECOMMENDATION_ASK_FRIENDS_OR_FAMILY_TO_DO_SHOPPING", "RECOMMENDATION_PREPARE_LIST_OF_SYMPTOMS", "RECOMMENDATION_CALL_INFORMATION");
     }
 
     return {
         title,
-        value,
+        illnessScore,
+        riskScore,
         recommendations
     }
 }

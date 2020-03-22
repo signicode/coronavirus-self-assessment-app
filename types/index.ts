@@ -45,6 +45,7 @@ export type AssessmentTranslationKey = keyof AssessmentTranslations;
 
 export type Assessment = {
     title: AssessmentTranslationKey;
-    value: number;
+    illnessScore: number;
+    riskScore: number;
     recommendations: AssessmentTranslationKey[];
 }

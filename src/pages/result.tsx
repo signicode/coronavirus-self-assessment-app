@@ -22,10 +22,11 @@ const Result = (): JSX.Element => {
     const results: FormResult = formResults;
 
     const assessment = assessResult(results);
-    const {title, recommendations, value} = createRecommendation(assessment);
+    const {title, recommendations, riskScore, illnessScore} = createRecommendation(assessment);
 
     const debug = {
-        value,
+        illnessScore,
+        riskScore,
         title,
         recommendations,
         answers: Object.entries(results).map(
@@ -42,7 +43,7 @@ const Result = (): JSX.Element => {
                 <Container>
                     <h1>Error</h1>
                     <code>
-                        {JSON.stringify({title, recommendations, value}, null, 2)}
+                        {JSON.stringify({title, recommendations, value: illnessScore}, null, 2)}
                     </code>
                 </Container>
             </ViewWrapper>
@@ -52,7 +53,7 @@ const Result = (): JSX.Element => {
             <ViewWrapper>
                 <pre style={{ overflow: "auto", maxWidth: "100%" }}>
                     <h2>
-                        {~~(value * 100)}%: {t(`assessment:${title}`)}
+                        {~~(illnessScore * 100)}%: {t(`assessment:${title}`)}
                     </h2>
                     <div>
                         {t(`assessment:${title}_DESCRIPTION`)}
