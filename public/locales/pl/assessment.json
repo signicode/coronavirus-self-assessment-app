@@ -11,13 +11,15 @@
   "RECOMMENDATION_AVOID_CROWDS": "Unikaj skupisk ludzi",
   "RECOMMENDATION_LIMIT_TRAVEL": "Ogranicz podróże i wyjścia do niezbędnego minimum",
   "RECOMMENDATION_KEEP_SOCIAL_DISTANCE": "Zachowaj co najmniej metr odległości od innych osób",
+  "RECOMMENDATION_COUGH_SNEEZE_TISSUE": "Kiedy kaszlesz i kichasz zakrywaj usta i nos jednorazową chusteczką higieniczną",
   "RECOMMENDATION_WEAR_GLOVES_AND_MASK_WHEN_CONTACTING_OTHERS": "Podczas przebywania poza domem zastosuj środki ochronne: rękawiczki oraz maskę",
   "RECOMMENDATION_WASH_HANDS": "Często myj ręce używając mydła i wody przez co najmniej 20s",
-  "RECOMMENDATION_SOFT_QUARANTINE": "Unikaj kontaktu z innymi osobami i zachowaj od nich odstęp min 1,5 m",
   "RECOMMENDATION_STRICT_QUARANTINE": "Ściśle przestrzegaj kwarantanny.",
-  "RECOMMENDATION_MONITOR_YOURSELF": "Od czasu do czasu sprawdź, czy nie występują wymienione symptomy i wypełnij test ponownie.",
+  "RECOMMENDATION_MONITOR_YOURSELF": "Monitoruj swoj stan zdrowia",
   "RECOMMENDATION_ASK_FRIENDS_OR_FAMILY_TO_DO_SHOPPING": "Poproś sąsiada lub rodzinę o zrobienie zakupów",
+  "RECOMMENDATION_ORGANIZE_PET_SITTER": "Jeżeli posiadasz zwierzę domowe, zorganizuj mu opiekę",
+  "RECOMMENDATION_PREPARE_LIST_OF_SYMPTOMS": "Przygotuj listę swoich symptomów",
   "RECOMMENDATION_CALL_INFORMATION_WHEN_SYMPTOMS_OCCUR": "W przypadku pogorszającego się stanu zdrowia zadzwoń pod numer 800-190-590.",
-  "RECOMMENDATION_CALL_INFORMATION": "W przypadku pogorszającego się stanu zdrowia zadzwoń pod numer 800-190-590.",
+  "RECOMMENDATION_CALL_INFORMATION": "Zadzwoń pod numer 800-190-590",
   "RECOMMENDATION_CALL_EMERGENCY_NUMBER": "Zadzwoń pod numer alarmowy ...."
 }
