@@ -12,8 +12,6 @@ export default App;
 if (typeof document !== "undefined") {
     const target = document.getElementById("root");
 
-    serviceWorker.register()
-
     const renderMethod = target.hasChildNodes()
         ? ReactDOM.hydrate
         : ReactDOM.render;
