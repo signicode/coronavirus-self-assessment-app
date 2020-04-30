@@ -24,7 +24,7 @@
     "i18next-browser-languagedetector": "^4.0.2",
     "i18next-fetch-backend": "^2.2.0",
     "i18next-xhr-backend": "^3.2.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "normalize.css": "^8.0.1",
     "rc-slider": "^9.2.3",
     "react": "^16.9.0",
